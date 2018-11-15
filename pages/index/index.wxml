@@ -1,0 +1,15 @@
+<view class="nav">
+  <view class="nav_item" wx:for="{{navList}}">{{item}}</view>
+</view>
+
+<scroll-view class="main_content" scroll-y>
+  <view class="head_line">
+    <view class="hot_lable">热门</view>
+    <view class="head_title">{{}}</view>
+    <view class="head_bottom">
+      <view class="head_news">{{}}</view>
+      <view class="head_time">{{}}</view>
+    </view>
+    <image class="" src="">{{}}</image>
+  </view>
+</scroll-view> 

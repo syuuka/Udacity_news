@@ -1,0 +1,39 @@
+
+.nav{
+  position: absolute;
+  top: 0;
+  height: 80rpx;
+  background: #34A1E2;
+  width:100%;
+  display: flex;
+}
+.nav_item{
+  margin-left: 20rpx;
+  flex-grow: 1;
+  height: 40rpx;
+  font-size: 30rpx;
+  color: #fff;
+}
+.main_content{
+  width: 100%;
+  position: absolute;
+  margin-top: 80rpx;
+}
+.head_line{
+  margin: 20rpx;
+  
+}
+.hot_lable{
+  position: absolute;
+  right: 20rpx;
+  width: 100rpx;
+  height: 42rpx;
+  align-items: right;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  border-radius: 0rpx 1rpx 0rpx 4rpx;
+  text-align: right;
+  background-color: red;
+  color: #fff;
+  opacity: 0.5;
+}
