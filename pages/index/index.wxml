@@ -1,15 +1,27 @@
 <view class="nav">
-  <view class="nav_item" wx:for="{{navList}}">{{item}}</view>
+  <view class="nav_item" wx:for="{{navList}}" data-type="{{item}}" bindtap="gotoNav">{{item}}</view>
 </view>
 
-<scroll-view class="main_content" scroll-y>
-  <view class="head_line">
+<scroll-view class="main_content">
+  <view class="head_line" bindtap='gotoDetail' data-detail='{{head_news}}'>
     <view class="hot_lable">热门</view>
-    <view class="head_title">{{}}</view>
+    <view class="head_title">{{head_news.title}}</view>
     <view class="head_bottom">
-      <view class="head_news">{{}}</view>
-      <view class="head_time">{{}}</view>
+      <view class="head_sours">{{!!head_news.source ? head_news : '未知来源'}}</view>
+      <view class="head_datetime">{{head_news.date}}</view>
     </view>
-    <image class="" src="">{{}}</image>
+    <image class="head_image" src="{{head_news.firstImage}}"></image>
+  </view>
+  <view class="news_list" wx:for="{{list_news}}">
+    <view class="news_item" bindtap='gotoDetail' data-detail='{{item}}'>
+      <view class="news_item_left">
+        <view class="news_title">{{item.title}}</view>
+        <view class="news_bottom">
+          <view class="news_sours">{{!!item.source ? item.source : '未知来源'}}</view>
+          <view class="news_datetime">{{item.date}}</view>
+        </view>
+      </view>
+      <image class="news_item_img" src="{{item.firstImage}}"></image>
+    </view>
   </view>
 </scroll-view> 
