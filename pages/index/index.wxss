@@ -5,9 +5,10 @@
   display: flex;
 }
 .nav_item{
-  margin-left: 25rpx;
-  margin-right: 26rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
   flex-grow: 1; 
+  text-align: center;
 }
 .nav_title_checked{
   color: #fff;
