@@ -1,17 +1,25 @@
 <view class="nav">
-  <view class="nav_item" wx:for="{{navList}}" data-type="{{item}}" bindtap="gotoNav">{{item}}</view>
+  <view class="nav_item" wx:for="{{navList}}">
+    <view class="nav_title{{item===checkedType?'_checked':''}}" data-type="{{item}}" bindtap="gotoNav">{{item}}</view>
+  </view>
 </view>
 
 <scroll-view class="main_content">
-  <view class="head_line" bindtap='gotoDetail' data-detail='{{head_news}}'>
-    <view class="hot_lable">热门</view>
-    <view class="head_title">{{head_news.title}}</view>
-    <view class="head_bottom">
-      <view class="head_sours">{{!!head_news.source ? head_news : '未知来源'}}</view>
-      <view class="head_datetime">{{head_news.date}}</view>
-    </view>
-    <image class="head_image" src="{{head_news.firstImage}}"></image>
-  </view>
+  <swiper indicator-dots="true" autoplay="true" indicator-active-color="rgba(255,255,255,0.6)" interval="3000" duration="1000" class="head_swiper">
+    <block wx:for="{{head_news}}">
+      <swiper-item>
+      <view class="head_line" bindtap='gotoDetail' data-detail='{{item}}'>
+        <view class="hot_lable">热门</view>
+        <view class="head_title">{{item.title}}</view>
+        <view class="head_bottom">
+          <view class="head_sours">{{!!item.source ? item : '未知来源'}}</view>
+          <view class="head_datetime">{{item.date}}</view>
+        </view>
+        <image class="head_image" src="{{item.firstImage}}"></image>
+      </view>
+      </swiper-item>
+    </block>
+  </swiper>
   <view class="news_list" wx:for="{{list_news}}">
     <view class="news_item" bindtap='gotoDetail' data-detail='{{item}}'>
       <view class="news_item_left">

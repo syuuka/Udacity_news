@@ -7,13 +7,21 @@
 .nav_item{
   margin-left: 20rpx;
   flex-grow: 1;
-  height: 40rpx;
+  height: 40rpx;  
+}
+.nav_title_checked{
+  border-bottom: 2rpx solid #fff;
+  font-weight: bolder;
+}
+.nav_title{
   font-size: 30rpx;
   color: #fff;
 }
-.nav_item select{
-  border-bottom: 2rpx solid #fff;
-  font-weight: 32rpx;
+.head_swiper{
+  position: relative;
+  height: 400rpx;
+  align-items: center;
+  margin: 20rpx;
 }
 .main_content{
   width: 100%;
@@ -22,7 +30,6 @@
   position: relative;
   height: 400rpx;
   align-items: center;
-  margin: 20rpx;
 }
 .hot_lable{
   position: absolute;

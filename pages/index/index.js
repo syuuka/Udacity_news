@@ -17,6 +17,7 @@ Page({
     head_news: '',
     list_news:'',
     type:'',
+    checkedType:'gn',
   }, 
   onLoad: function(){
     wx.setNavigationBarTitle({
@@ -27,7 +28,7 @@ Page({
       backgroundColor: "#34A1E2",
     });
     let type = this.data.type;
-    this.getNewsList(type);
+    let list = this.getNewsList(type);
   },
   getNewsList(newsType, callback){
     let head = "";
@@ -43,11 +44,12 @@ Page({
       success: res => {
         let data = res.data.result;
         this.formatDate(data);
-        head = res.data.result[0];
-        list = res.data.result.slice(1);
+        head = res.data.result.slice(0,3);
+        list = res.data.result.slice(3);
         this.setData({
           head_news: head,
           list_news: list,
+          checkedType: newsType,
         });
       },
       complete: () =>{

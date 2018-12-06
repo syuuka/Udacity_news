@@ -1,6 +1,5 @@
 .title_line{
   position: relative;
-  height: 200rpx;
   border-top: 4rpx solid rgba(34, 144, 247, 0.664);
   border-bottom: 4rpx solid rgba(0, 0, 0, 0.2);
   padding-left: 20rpx;
@@ -15,14 +14,13 @@
 }
 .title_bottom{
   display: flex;
-  position: absolute;
+  position: relative;
   bottom: 10rpx;
   flex-direction: row;
   font-size: 30rpx;
   line-height: 42rpx;
   opacity: 0.6;
-  left: 20rpx;
-  right: 20rpx;
+  margin-top: 20rpx;
 }
 .bottom_left{
   display: flex;
