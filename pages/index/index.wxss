@@ -1,16 +1,18 @@
 .nav{
-  height: 80rpx;
+  height: 50rpx;
   background: #34A1E2;
   width:100%;
   display: flex;
 }
 .nav_item{
-  margin-left: 20rpx;
-  flex-grow: 1;
-  height: 40rpx;  
+  margin-left: 25rpx;
+  margin-right: 26rpx;
+  flex-grow: 1; 
 }
 .nav_title_checked{
-  border-bottom: 2rpx solid #fff;
+  color: #fff;
+  font-size: 30rpx;
+  border-bottom: 5rpx solid #fff;
   font-weight: bolder;
 }
 .nav_title{

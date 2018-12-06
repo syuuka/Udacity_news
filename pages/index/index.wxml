@@ -1,6 +1,6 @@
 <view class="nav">
   <view class="nav_item" wx:for="{{navList}}">
-    <view class="nav_title{{item===checkedType?'_checked':''}}" data-type="{{item}}" bindtap="gotoNav">{{item}}</view>
+    <view class="nav_title{{item == checkedType?'_checked':''}}" data-type="{{item}}" bindtap="gotoNav">{{item}}</view>
   </view>
 </view>
 
@@ -12,7 +12,7 @@
         <view class="hot_lable">热门</view>
         <view class="head_title">{{item.title}}</view>
         <view class="head_bottom">
-          <view class="head_sours">{{!!item.source ? item : '未知来源'}}</view>
+          <view class="head_sours">{{!!item.source ? item.source : '未知来源'}}</view>
           <view class="head_datetime">{{item.date}}</view>
         </view>
         <image class="head_image" src="{{item.firstImage}}"></image>

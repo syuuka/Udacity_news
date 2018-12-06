@@ -16,8 +16,8 @@ Page({
     navList: ["国内", "国际", "财经", "娱乐", "军事", "体育", "其他"],
     head_news: '',
     list_news:'',
-    type:'',
-    checkedType:'gn',
+    type:'gn',
+    checkedType:'国内',
   }, 
   onLoad: function(){
     wx.setNavigationBarTitle({
@@ -33,6 +33,12 @@ Page({
   getNewsList(newsType, callback){
     let head = "";
     let list = "";
+    let check = "";
+    for (let key in nav_set){
+      if (nav_set[key] == newsType){
+        check = key;
+      }
+    }
     if(newsType==""){
       newsType = "gn"
     }
@@ -49,7 +55,7 @@ Page({
         this.setData({
           head_news: head,
           list_news: list,
-          checkedType: newsType,
+          checkedType: check,
         });
       },
       complete: () =>{
