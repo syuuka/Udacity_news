@@ -30,6 +30,11 @@ Page({
     let type = this.data.type;
     let list = this.getNewsList(type);
   },
+  onPullDownRefresh() {
+    this.getNewsList(this.data.type, () => {
+      wx.stopPullDownRefresh()
+    });
+  },
   getNewsList(newsType, callback){
     let head = "";
     let list = "";
@@ -80,11 +85,11 @@ Page({
     for(let i = 0; i < temp.length; i++ ){
       const d = new Date(temp[i].date);
       temp[i].date = `${d.getFullYear()}` + '-' + `${d.getMonth() + 1}` + '-' + `${d.getDate()}`;
+      //判断图片链接是否为空，若为空，则用占位图片补上
+      if (temp[i].firstImage == '') {
+        temp[i].firstImage = '../../images/占位图片.jpg';
+      }
     }
   },
-  onPullDownRefresh(){
-    this.getNewsList(() => {
-      wx.stopPullDownRefresh()
-    })
-  }
+  
 })

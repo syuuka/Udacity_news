@@ -37,9 +37,16 @@
 .detail_title{
   margin: 20rpx;
 }
+.news_p{
+  font-size: 30rpx;
+  line-height: 42rpx;
+  text-indent: 2em;
+}
 .news_text{
   font-size: 30rpx;
   line-height: 42rpx;
+  font-weight: bolder;
+  text-align: center;
 }
 .news_image{
   width: 710rpx;

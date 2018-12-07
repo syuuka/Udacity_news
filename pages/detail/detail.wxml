@@ -2,7 +2,7 @@
   <view class="title">{{detail.title}}</view>
   <view class="title_bottom">
     <view class="bottom_left">
-      <view class="news_source">{{detail.source}}</view>
+      <view class="news_source">{{!!detail.source?detail.source:"未知来源"}}</view>
       <view class="news_date">{{detail.date}}</view>
     </view>
     <view class="bottom_right">阅读 {{detail.readCount}}</view>
@@ -11,9 +11,12 @@
 
 <view class="detail_title" wx:for='{{detail.content}}'>
   <block wx:if="{{item.type=='p'}}">
-    <view class="news_text">{{item.text}}</view>
+    <view class="news_p">{{item.text}}</view>
   </block>
   <block wx:if="{{item.type=='image'}}">
     <image class="news_image" src="{{item.src}}"></image>
+  </block>
+  <block wx:if="{{item.type=='strong'}}">
+    <view class="news_text">{{item.text}}</view>
   </block>
 </view>

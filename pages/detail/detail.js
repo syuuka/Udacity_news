@@ -25,6 +25,7 @@ Page({
       success: res => {
         news_detail = res.data.result;
         this.formatDate(news_detail);
+        console.log(res)
         this.setData({
           detail: news_detail
         })
